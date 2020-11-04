@@ -8,7 +8,7 @@
 </head>
 <Scene>
 <Switch id="swBRP" whichChoice="0"><Transform scale="1 1 1"><Shape DEF="shape0" onclick="select(this);"><Appearance>
-<Material diffuseColor="0.51751 0.6759 0.170303" id="color" shininess="0.9" specularColor="0.2 0.2 0.2" transparency="0">
+<Material diffuseColor="0.512067 0.501457 0.826463" id="color" shininess="0.9" specularColor="0.2 0.2 0.2" transparency="0">
 </Material>
 </Appearance>
 <TriangleSet solid="false">

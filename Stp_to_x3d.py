@@ -34,7 +34,7 @@ import os
 import socket
 import webbrowser
 import errno
-from flask import Flask, redirect, url_for, request
+from flask import Flask, redirect, url_for, request,send_from_directory
 from flask import Flask, render_template
 from werkzeug.utils import secure_filename
 
@@ -80,7 +80,14 @@ def Exchange_stp_3xd(file="aaa.stp",path="."):
     my_renderer = x3dom_renderer.X3DomRenderer(path=path)
     my_renderer.DisplayShape(the_shape,export_edges=True,color=(random(), random(), random()))
     my_renderer.run()
-    return file
+    os.path.join(path, "index.html")
+    path="."+"\\"+ path +"\\"+"index.html"
+    print(path)
+    
+    with open(path,"r") as f:
+          html=f.read()
+          f.close()
+    return html
 
 
 
@@ -89,13 +96,7 @@ from flask import Flask
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'upload/'
 
-@app.route('/')
-def index():
-    result=Exchange_stp_3xd()
-    fp = open(os.path.join("1", 'index.html'))
-    html_content = fp.read()
-    fp.close()
-    return html_content
+
  
 
 @app.route('/upload')
@@ -110,7 +111,12 @@ def uploader():
       print(f.filename)
       path=".\\upload"+"\\"+f.filename
       result=Exchange_stp_3xd(file=path)
-      return 'file uploaded successfully'
+      #return 'file uploaded successfully'
+      return result
+@app.route('/<path:path>')
+def send_x3d_content(path):
+    x3d_path="."+"\\"+"1" +"\\"+"index.html"
+    return send_from_directory(x3d_path, path)
 
 
 
