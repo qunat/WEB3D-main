@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
+﻿<!DOCTYPE HTML>
 <html lang="en">
+
 <head>
-    <title>pythonOCC 7.4.0 x3dom renderer</title>
-    <meta name='Author' content='Thomas Paviot - tpaviot@gmail.com'>
+    <title>JView--一款在线跨平台的3d查看器</title>
+    <!-- <meta name='Author' content='Thomas Paviot - tpaviot@gmail.com'> -->
     <meta name='Keywords' content='WebGl,pythonOCC'>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="https://x3dom.org/release/x3dom.css">
@@ -13,6 +14,7 @@
             margin: 0px;
             overflow: hidden;
         }
+
         #pythonocc_rocks {
             padding: 5px;
             position: absolute;
@@ -29,6 +31,7 @@
             font-size: 14px;
             opacity: 0.5;
         }
+
         #commands {
             padding: 5px;
             position: absolute;
@@ -45,10 +48,12 @@
             font-size: 14px;
             opacity: 0.5;
         }
+
         a {
             color: #f7941e;
             text-decoration: none;
         }
+
         a:hover {
             color: #ffffff;
         }
@@ -56,75 +61,99 @@
 </head>
 
 <body>
-    
-	<x3d id="pythonocc-x3d-scene" style="width:100%;border: none" >
-		<Scene>
+
+ 
+    <x3d id="pythonocc-x3d-scene" style="width:100%;border: none">
+        <Scene>
 
             <transform scale="1,1,1">
-            <transform id="plane_smallaxe_Id" rotation="1 0 0 -1.57079632679">
+                <!-- <transform id="plane_smallaxe_Id" rotation="1 0 0 -1.57079632679">
                 <inline url="https://rawcdn.githack.com/x3dom/component-editor/master/static/x3d/plane.x3d" mapDEFToID="true" namespaceName="plane"></inline>
                 <inline url="https://rawcdn.githack.com/x3dom/component-editor/master/static/x3d/axesSmall.x3d" mapDEFToID="true" namespaceName="axesSmall"></inline>
             </transform>
             <inline url="https://rawcdn.githack.com/x3dom/component-editor/master/static/x3d/axes.x3d" mapDEFToID="true" namespaceName="axes"></inline>
-            </transform>
-            <transform id="glbal_scene_rotation_Id" rotation="1 0 0 -1.57079632679">			<Inline onload="fitCamera()" mapDEFToID="true" url="shp21d563deec3c45b6a701317be8292f5c.x3d"></Inline>
-</transform>		</Scene>
-	</x3d>
+            </transform> -->
+                <transform id="glbal_scene_rotation_Id" rotation="1 0 0 -1.57079632679">
+                    <Inline id="file3d" onload="fitCamera()" mapDEFToID="true" url="{{file}}></Inline>
+                </transform>
+        </Scene>
+    </x3d>
 
-    <div id="pythonocc_rocks">
+    <!-- <div id="pythonocc_rocks">
         pythonocc-7.4.0 <a href="https://www.x3dom.org" target="_blank">x3dom</a> renderer
         <br>Check our blog at
         <a href=http://www.pythonocc.org>http://www.pythonocc.org</a>
-    </div>
+    </div> -->
     <div id="commands">
-    <b>t</b> view/hide shape<br>
-    <b>r</b> reset view<br>
-    <b>a</b> show all<br>
-    <b>u</b> upright<br>
+        <b>t</b> view/hide shape<br>
+        <b>r</b> reset view<br>
+        <b>a</b> show all<br>
+        <b>u</b> upright<br>
     </div>
     <script>
-    var selected_target_color = null;
-    var current_selected_shape = null;
-    var current_mat = null;
-    function fitCamera()
-    {            
-        var x3dElem = document.getElementById('pythonocc-x3d-scene');            
-        x3dElem.runtime.fitAll();
-    }
-    function select(the_shape) // called whenever a shape is clicked
-    {
-        // restore color for previous selected shape
-        if (current_mat) {
-            current_mat.diffuseColor = selected_target_color;
+        var selected_target_color = null;
+        var current_selected_shape = null;
+        var current_mat = null;
+        function fitCamera() {
+            var x3dElem = document.getElementById('pythonocc-x3d-scene');
+            x3dElem.runtime.fitAll();
         }
-        // store the shape for future process
-        current_selected_shape = the_shape;
-        console.log(the_shape);
-        // store color, to be restored later
-        appear = current_selected_shape.getElementsByTagName("Appearance")[0];
-        mat = appear.getElementsByTagName("Material")[0];
-        current_mat = mat;
-        console.log(mat);
-        selected_target_color = mat.diffuseColor;
-        mat.diffuseColor = "1, 0.65, 0";
-        //console.log(the_shape.getElementsByTagName("Appearance"));//.getAttribute('diffuseColor'));
-    }
-    function onDocumentKeyPress(event) {
-      event.preventDefault();
-      if (event.key=="t") {  // t key
-         if (current_selected_shape) {
-           if (current_selected_shape.render == "true") {
-              current_selected_shape.render = "false";
-           }
-           else {
-              current_selected_shape.render = "true";
-           }
-         }
-      }
+        function select(the_shape) // called whenever a shape is clicked
+        {
+            // restore color for previous selected shape
+            if (current_mat) {
+                current_mat.diffuseColor = selected_target_color;
+            }
+            // store the shape for future process
+            current_selected_shape = the_shape;
+            console.log(the_shape);
+            // store color, to be restored later
+            appear = current_selected_shape.getElementsByTagName("Appearance")[0];
+            mat = appear.getElementsByTagName("Material")[0];
+            current_mat = mat;
+            console.log(mat);
+            selected_target_color = mat.diffuseColor;
+            mat.diffuseColor = "1, 0.65, 0";
+            //console.log(the_shape.getElementsByTagName("Appearance"));//.getAttribute('diffuseColor'));
+        }
+        function onDocumentKeyPress(event) {
+            event.preventDefault();
+            if (event.key == "t") {  // t key
+                if (current_selected_shape) {
+                    if (current_selected_shape.render == "true") {
+                        current_selected_shape.render = "false";
+                    }
+                    else {
+                        current_selected_shape.render = "true";
+                    }
+                }
+            }
 
-    }
-    // add events
-    document.addEventListener('keypress', onDocumentKeyPress, false);
+        }
+        // add events
+        document.addEventListener('keypress', onDocumentKeyPress, false);
+
     </script>
 </body>
+
 </html>
+
+
+<script>
+
+    // zqw 2020年11月5日10:53:55
+    function GetQueryString(name) {
+
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return decodeURI(r[2]);
+        //但是在使用的过程中，发现其在获取中文参数的时候，获取到的值是乱码的
+        //解决办法:将解码方式unscape换为decodeURI
+        return null;
+    };
+
+var url= document.getElementById("file3d");
+//alert(url)
+ url.setAttribute("url",GetQueryString('file'))
+</script>
+

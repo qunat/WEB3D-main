@@ -111,14 +111,14 @@ def uploader():
       print(f.filename)
       path=".\\upload"+"\\"+f.filename
       result=Exchange_stp_3xd(file=path)
-      #return 'file uploaded successfully'
       return result
 @app.route('/<path:path>')
 def send_x3d_content(path):
-    x3d_path="."+"\\"+"1"
+    global num_click
+    x3d_path="."+"\\"+str(num_click)
     return send_from_directory(x3d_path, path)
 
 
 
 if __name__ == '__main__':
-    app.run("192.168.0.103",5050,threaded=True)
+    app.run("0.0.0.0",8080,threaded=True)

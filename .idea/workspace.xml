@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="61f7f96e-0c85-4f5d-8cab-8c81ca145be3" name="Default Changelist" comment="" />
+    <list default="true" id="61f7f96e-0c85-4f5d-8cab-8c81ca145be3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/1/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stp_to_x3d.py" beforeDir="false" afterPath="$PROJECT_DIR$/Stp_to_x3d.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/shp04ec3f5a614f416da9799793e8c1466f.x3d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/shp21d563deec3c45b6a701317be8292f5c.x3d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/~$index.html" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1jpOfJuvhQHLanNY6xvMKEKlcWp" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -60,26 +72,30 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1578" height="259" key="GridCell.Tab.0.bottom" timestamp="1604500078188">
+    <state width="1578" height="259" key="GridCell.Tab.0.bottom" timestamp="1604529726112">
       <screen x="0" y="0" width="1600" height="984" />
     </state>
-    <state width="1578" height="259" key="GridCell.Tab.0.bottom/0.0.1600.984@0.0.1600.984" timestamp="1604500078188" />
-    <state width="1578" height="259" key="GridCell.Tab.0.center" timestamp="1604500078188">
+    <state width="1578" height="259" key="GridCell.Tab.0.bottom/0.0.1600.984@0.0.1600.984" timestamp="1604529726112" />
+    <state width="1578" height="259" key="GridCell.Tab.0.center" timestamp="1604529726111">
       <screen x="0" y="0" width="1600" height="984" />
     </state>
-    <state width="1578" height="259" key="GridCell.Tab.0.center/0.0.1600.984@0.0.1600.984" timestamp="1604500078188" />
-    <state width="1578" height="259" key="GridCell.Tab.0.left" timestamp="1604500078188">
+    <state width="1578" height="259" key="GridCell.Tab.0.center/0.0.1600.984@0.0.1600.984" timestamp="1604529726111" />
+    <state width="1578" height="259" key="GridCell.Tab.0.left" timestamp="1604529726111">
       <screen x="0" y="0" width="1600" height="984" />
     </state>
-    <state width="1578" height="259" key="GridCell.Tab.0.left/0.0.1600.984@0.0.1600.984" timestamp="1604500078188" />
-    <state width="1578" height="259" key="GridCell.Tab.0.right" timestamp="1604500078188">
+    <state width="1578" height="259" key="GridCell.Tab.0.left/0.0.1600.984@0.0.1600.984" timestamp="1604529726111" />
+    <state width="1578" height="259" key="GridCell.Tab.0.right" timestamp="1604529726111">
       <screen x="0" y="0" width="1600" height="984" />
     </state>
-    <state width="1578" height="259" key="GridCell.Tab.0.right/0.0.1600.984@0.0.1600.984" timestamp="1604500078188" />
+    <state width="1578" height="259" key="GridCell.Tab.0.right/0.0.1600.984@0.0.1600.984" timestamp="1604529726111" />
     <state x="301" y="123" key="SettingsEditor" timestamp="1604497780494">
       <screen x="0" y="0" width="1600" height="984" />
     </state>
     <state x="301" y="123" key="SettingsEditor/0.0.1600.984@0.0.1600.984" timestamp="1604497780494" />
+    <state x="480" y="314" key="com.intellij.ide.util.TipDialog" timestamp="1604580680435">
+      <screen x="0" y="0" width="1600" height="984" />
+    </state>
+    <state x="480" y="314" key="com.intellij.ide.util.TipDialog/0.0.1600.984@0.0.1600.984" timestamp="1604580680435" />
     <state x="593" y="156" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1604498681674">
       <screen x="0" y="0" width="1600" height="984" />
     </state>
